@@ -1,1 +1,11 @@
-<app-header></app-header>
+<app-header
+  (switchPage)="onNavigate($event)"
+></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedPage === 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="loadedPage !== 'recipes'"></app-shopping-list>
+    </div>
+  </div>
+</div>
